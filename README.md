@@ -10,7 +10,7 @@ A customizable college website demo designed to present a Universal Human Values
 
 ## Homepage Preview
 
-![College UHV Website Homepage](images/homepage-preview.jpeg)
+![College UHV Website Homepage](1f6c14d4-1055-40e0-b119-5f56bf9ae60d.jpeg)
 
 ## About the Project
 
