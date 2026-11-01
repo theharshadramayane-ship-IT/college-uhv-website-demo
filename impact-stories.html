@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact Stories | LGMIER</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- ===== Internal CSS ===== -->
+<style>
+  * {
+    font-family: "Times New Roman", Times, serif;
+}
+
+  /* ===== Header ===== */
+   .college-header {
+    display: grid;
+    grid-template-columns: 130px 1fr 130px;
+    align-items: center;
+    padding: 6px 20px;
+    background: #fff;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .header-logo img {
+    height: 50px;
+    width: auto;
+  }
+
+ .trust-line {
+    color: #001F5B;        /* Navy Blue */
+    font-weight: 700;
+    font-size: 14px;
+    margin: 2px 0 4px;
+    letter-spacing: 0.3px;
+}
+
+  .college-title {
+    color:#B71C1C;
+    font-weight:800;
+    font-size:18px;
+    line-height:1.2;
+    margin:2px 0;
+  }
+
+  .approval-line {
+    color: #333;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.2;
+    margin: 1px 0;
+  }
+
+  /* ===== Navbar ===== */
+  .navbar-custom{
+    background:#e9e1e1;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    border:1px solid #eee;
+    border-radius:50px;
+
+    padding:2px 18px;
+    margin:4px 20px;
+    min-height:42px;
+}
+.navbar{
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+}
+
+.navbar-expand-lg{
+    min-height:42px;
+}
+
+.navbar-collapse{
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.navbar-nav{
+    margin:0;
+    padding:0;
+    gap:4px;
+    align-items:center;
+}
+
+.nav-item{
+    margin:0;
+}
+
+.navbar-custom .nav-link{
+    color:#333 !important;
+    font-weight:600;
+    font-size:14px;
+    padding:6px 18px !important;
+    line-height:1.2;
+    border-radius:30px;
+    transition:all .3s ease;
+}
+
+.navbar-custom .nav-link.active{
+    padding:6px 18px !important;
+}
+  .navbar-nav{
+    align-items:center;
+    gap:8px;
+  }
+
+  .nav-icon{
+    background:#B71C1C;
+    color:#fff;
+    font-weight:bold;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+  }
+
+  .nav-title{
+    font-weight:700;
+    font-size:18px;
+    color:#B71C1C;
+    margin:0;
+  }
+
+  .navbar-custom .nav-link{
+    color:#333 !important;
+    font-weight:600;
+    font-size:14px;
+    padding:8px 18px !important;
+    border-radius:30px;
+    transition:all .3s ease;
+  }
+
+  .navbar-custom .nav-link:hover{
+    background:#fff5f5;
+    color:#B71C1C !important;
+  }
+
+  .navbar-custom .nav-link.active{
+    background:#B71C1C;
+    color:#fff !important;
+    border-radius:30px;
+  }
+
+  .visitors-box{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-end;
+    text-align:right;
+    font-size:11px;
+    color:#a1c912;
+  }
+
+  .visitors-box p{
+    font-weight:700;
+    color:#B71C1C;
+    margin:0;
+    font-size:14px;
+  }
+
+  .dot-live{
+    width:8px;
+    height:8px;
+    background:#dc3545;
+    border-radius:50%;
+    display:inline-block;
+    animation:pulse 1.5s infinite;
+  }
+
+  @keyframes pulse{
+    0%{opacity:1;}
+    50%{opacity:.4;}
+    100%{opacity:1;}
+  }
+
+  /* ===== Updates Ticker ===== */
+  .updates-bar {
+    display: flex;
+    align-items: center;
+    background: #B71C1C;
+    color: #fff;
+    padding: 4px 15px;
+    overflow: hidden;
+    gap: 10px;
+    min-height: 38px;
+  }
+  .updates-tag { background: #dc3545; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+  .ticker-track { display: flex; gap: 60px; white-space: nowrap; animation: ticker 20s linear infinite; }
+  .ticker-track span { font-size: 14px; }
+  @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+  /* ===== Impact Hero ===== */
+  .impact-hero {
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    flex-wrap: wrap; padding: 42px 30px;
+    background: linear-gradient(120deg, #001F5B 0%, #6e1414 55%, #B71C1C 100%);
+  }
+  .impact-hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 88% 18%, rgba(212,175,55,0.18) 0%, transparent 42%),
+      radial-gradient(circle at 8% 90%, rgba(255,255,255,0.08) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .impact-hero-left { max-width: 600px; position: relative; z-index: 1; }
+  .stats-badge {
+    display: inline-block; background: rgba(255,255,255,0.15); color: #ffe9b0;
+    border: 1px solid rgba(255,233,176,0.35);
+    padding: 5px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 10px;
+  }
+  .impact-hero h1 {
+    font-family: Georgia, serif; font-size: 34px; margin: 0 0 8px;
+    background: linear-gradient(to right, #ffffff, #ffe9b0);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .impact-hero p { color: rgba(255,255,255,0.85); font-size: 15px; margin: 0; position: relative; z-index: 1; }
+
+  .share-story-btn {
+    position: relative; z-index: 1;
+    background: #dc3545; color: #fff; border: none; padding: 13px 26px; border-radius: 30px;
+    font-size: 14px; font-weight: 700; cursor: pointer; transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(220,53,69,0.3); white-space: nowrap;
+  }
+  .share-story-btn:hover { background: #B71C1C; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(183,28,28,0.35); }
+
+  /* ===== Stories Grid ===== */
+  .stories-section { max-width: 1200px; margin: 0 auto; padding: 35px 20px 55px; }
+
+  .story-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 20px;
+  height: 100%;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+  .story-card:hover { transform: translateY(-6px); box-shadow: 0 12px 26px rgba(183,28,28,0.15); }
+
+  .story-card-content { flex: 1; }
+
+  .story-text { font-size: 13.5px; color: #444; line-height: 1.65; font-style: italic; margin-bottom: 16px; }
+
+  .story-video-wrapper { width: calc(100% + 40px); margin: -22px -20px 14px; border-radius: 14px 14px 0 0; overflow: hidden; }
+  .story-video-wrapper video { width: 100%; height: 180px; object-fit: cover; display: block; background: #000; }
+
+  .story-author{
+    margin-top:20px;
+    padding-top:15px;
+    border-top:2px solid #B71C1C;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+
+.story-avatar{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #B71C1C;
+}
+
+
+.story-author-name{
+    margin:0;
+    font-size:16px;
+    font-weight:700;
+    color:#333;
+}
+
+
+.story-author-date{
+    margin:3px 0 0;
+    font-size:12px;
+    color:#B71C1C;
+    font-weight:600;
+}
+  .no-stories { text-align: center; padding: 40px 20px; color: #888; font-size: 14px; grid-column: 1 / -1; }
+
+  /* Story Author Section */
+
+.story-author{
+    margin-top:auto;
+    padding-top:18px;
+    border-top:2px solid #B71C1C;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.story-author img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #B71C1C;
+}
+
+.story-author h4{
+    margin:0;
+    font-family:"Times New Roman", serif;
+    font-size:17px;
+    color:#333;
+    font-weight:700;
+}
+  /* ===== Share Story Modal ===== */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+    z-index: 2000; align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.show { display: flex; }
+
+  .modal-box {
+    background: #fff; border-radius: 18px; max-width: 540px; width: 100%;
+    padding: 30px 28px 26px; max-height: 90vh; overflow-y: auto; position: relative;
+    animation: modalSlideIn 0.3s ease;
+  }
+  @keyframes modalSlideIn {
+    from { opacity: 0; transform: scale(0.95) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .modal-close {
+    position: absolute; top: 14px; right: 18px; font-size: 26px; color: #999;
+    cursor: pointer; background: none; border: none; transition: 0.3s;
+  }
+  .modal-close:hover { color: #dc3545; transform: rotate(90deg); }
+
+  .modal-box h2 { font-family: Georgia, serif; font-size: 24px; color: #1a1a1a; margin-bottom: 20px; }
+
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-weight: 700; font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; color: #555; margin-bottom: 8px; }
+
+  .form-group input[type="text"],
+  .form-group textarea {
+    width: 100%; padding: 12px 14px; border: 1.5px solid #ddd; border-radius: 10px;
+    font-size: 14px; font-family: inherit; background: #fafafa; transition: 0.3s;
+  }
+  .form-group input[type="text"]:focus,
+  .form-group textarea:focus {
+    border-color: #B71C1C; outline: none; background: #fff; box-shadow: 0 0 0 3px rgba(183,28,28,0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .file-input-wrapper { display: flex; align-items: center; gap: 10px; }
+  .file-input-wrapper input[type="file"] {
+    font-size: 13px; padding: 8px; border: 1.5px dashed #ddd; border-radius: 8px;
+    background: #fafafa; width: 100%; cursor: pointer;
+  }
+
+  .media-type-toggle { display: flex; gap: 10px; }
+  .media-type-toggle button {
+    flex: 1; padding: 10px; border: 2px solid #ddd; border-radius: 10px;
+    background: #fafafa; cursor: pointer; font-weight: 600; font-size: 13px;
+    transition: 0.3s; color: #666;
+  }
+  .media-type-toggle button.active { border-color: #B71C1C; background: rgba(183,28,28,0.08); color: #B71C1C; }
+  .media-type-toggle button:hover { border-color: #B71C1C; }
+
+  .media-upload-area { display: none; }
+  .media-upload-area.active { display: block; }
+
+  .form-hint { font-size: 11px; color: #999; margin-top: 5px; font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+  .submit-story-btn {
+    width: 100%; background: #B71C1C; color: #fff; border: none; padding: 13px;
+    border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: 0.3s;
+  }
+  .submit-story-btn:hover { background: #dc3545; }
+
+  .success-message { display: none; text-align: center; padding: 15px 0; }
+  .success-message.show { display: block; }
+  .success-message .check-icon {
+    font-size: 40px; background: #B71C1C; color: #fff; width: 62px; height: 62px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+  }
+  .success-message h3 { font-family: Georgia, serif; color: #1a1a1a; margin-bottom: 6px; }
+  .success-message p { color: #777; font-size: 13px; }
+
+  /* ===== Footer ===== */
+  .site-footer { background: #14171c; color: #cfcfcf; padding: 40px 25px 15px; position: relative; }
+  .footer-college-name { font-size: 14px; color: #fff; margin-bottom: 10px; line-height: 1.4; }
+  .footer-address, .footer-contact { font-size: 12px; margin-bottom: 6px; color: #b0b0b0; }
+  .footer-socials a { width: 30px; height: 30px; border: 1px solid #444; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; color: #ccc; text-decoration: none; font-size: 11px; margin-right: 7px; transition: 0.3s; }
+  .footer-socials a:hover { background: #B71C1C; border-color: #B71C1C; color: #fff; }
+  .footer-col h4 { color: #fff; margin-bottom: 12px; font-size: 15px; }
+  .footer-links { list-style: none; padding: 0; }
+  .footer-links li { margin-bottom: 8px; }
+  .footer-links a { color: #b0b0b0; text-decoration: none; font-size: 12px; transition: 0.3s; }
+  .footer-links a:hover { color: #dc3545; padding-left: 3px; }
+  .footer-map { border-radius: 8px; overflow: hidden; }
+  .footer-visitors { display: flex; align-items: center; justify-content: center; gap: 6px; width: fit-content; margin: 22px auto 0; padding: 6px 18px; border: 1px solid #2a2a2a; border-radius: 20px; background: rgba(220,53,69,0.08); color: #cfcfcf; font-size: 12px; font-weight: 600; }
+  .footer-visitors strong { color: #dc3545; font-size: 13px; }
+  .footer-bottom { text-align: center; border-top: 1px solid #2a2a2a; margin-top: 25px; padding-top: 14px; font-size: 11px; color: #888; }
+  .scroll-top { position: fixed; bottom: 18px; right: 18px; background: #dc3545; color: #fff; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 16px; z-index: 10; transition: transform 0.3s; }
+  .scroll-top:hover { transform: translateY(-4px); }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .college-header { grid-template-columns: 1fr; text-align: center; }
+    .header-logo { margin: 0 auto; }
+    .college-title { font-size: 15px; }
+    .impact-hero { flex-direction: column; text-align: center; }
+    .impact-hero h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="college-header">
+  <div class="header-logo"><img src="https://tse2.mm.bing.net/th/id/OIP.Am33BQymmngS4icXMHDjKgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="College Logo"></div>
+  <div>
+    <p class="trust-line">Kr. Vasantrao Narayanrao Naik Shikshan Prasarak Sanstha's</p>
+    <h1 class="college-title">LOKNETE GOPINATHJI MUNDE INSTITUTE OF ENGINEERING EDUCATION & RESEARCH</h1>
+    <p class="approval-line">Approved By AICTE &nbsp;|&nbsp; Accredited 'B' Grade By NAAC</p>
+  </div>
+ <div class="header-logo"><img src="https://www.kvnnaik.org/images/kvn_img/logo.png" alt="KVN Naik Sanstha Logo"></div>
+</header>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="uhv-cell.html">INSTITUTE UHV CELL</a></li>
+        <li class="nav-item"><a class="nav-link" href="activities.html">ACTIVITIES</a></li>
+        <li class="nav-item"><a class="nav-link active" href="impact-stories.html">IMPACT STORIES</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ UPDATES TICKER ============ -->
+<div class="updates-bar">
+  <span class="updates-tag">● UPDATES</span>
+  <div class="ticker-track">
+    <span>Right Understanding, Right Feelings, and Right Conduct for ethical leadership.</span>
+    <span>📌 MDP on Universal Human Values inaugurated at PCCoE (8th–10th April). Organized for senior leaders.</span>
+    <span>👥 78 delegates (48 PCCoE, 31 from other institutions) participated.</span>
+  </div>
+</div>
+
+<!-- ============ IMPACT HERO ============ -->
+<section class="impact-hero">
+  <div class="impact-hero-left">
+    <span class="stats-badge">📖 <span id="storyCount">0</span> Impact Stories</span>
+    <h1>Impact Stories</h1>
+    <p>Real stories of transformation from our community through Universal Human Values.</p>
+  </div>
+  <button class="share-story-btn" id="openShareModal">✨ Share Your Story</button>
+</section>
+
+<!-- ============ STORIES GRID ============ -->
+<section class="stories-section">
+  <div class="row g-3" id="storiesGrid"></div>
+</section>
+
+<!-- ============ SHARE STORY MODAL ============ -->
+<div class="modal-overlay" id="shareModal">
+  <div class="modal-box">
+    <button class="modal-close" id="closeModal">✕</button>
+
+    <div id="formContent">
+      <h2>Share Your Journey</h2>
+
+      <form id="storyForm">
+        <div class="form-group">
+          <label>Display Name</label>
+          <input type="text" id="displayName" placeholder="Your Name or Anonymous" required>
+        </div>
+
+        <div class="form-group">
+          <label>Profile Photo </label>
+          <div class="file-input-wrapper">
+            <input type="file" id="profilePhoto" accept="image/*">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Share as</label>
+          <div class="media-type-toggle">
+            <button type="button" class="active" data-type="text">✍️ Write Story</button>
+            <button type="button" data-type="video">🎬 Upload Video</button>
+          </div>
+          <p class="form-hint">Choose one — write your story or upload a video.</p>
+        </div>
+
+        <div class="form-group media-upload-area active" id="textArea">
+          <label>Your Story of Change</label>
+          <textarea id="storyText" placeholder="Share your impact story (100-150 words)..."></textarea>
+        </div>
+
+        <div class="form-group media-upload-area" id="videoArea">
+          <label>Upload Video</label>
+          <div class="file-input-wrapper">
+            <input type="file" id="videoFile" accept="video/*">
+          </div>
+        </div>
+
+        <button type="submit" class="submit-story-btn" id="submitBtn">Submit for Moderation</button>
+      </form>
+    </div>
+
+    <div class="success-message" id="successMessage">
+      <div class="check-icon">✓</div>
+      <h3>Story Submitted! 🙌</h3>
+      <p>Your story has been sent for moderation. It will appear here once approved by the admin.</p>
+      <button class="share-story-btn" style="margin-top:18px; padding:10px 28px;" id="closeSuccessBtn">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h3 class="footer-college-name">LOKNETE GOPINATHJI MUNDE INSTITUTE<br>OF ENGINEERING EDUCATION & RESEARCH</h3>
+        <p class="footer-address">Dongare Vasatigruha Parisar, Canada Corner, Sharanpur Road, Nashik-422002.</p>
+        <p class="footer-contact">Phone: (0253) 6641300/02/05/09</p>
+        <p class="footer-contact">Email: logmieer@edu.in</p>
+        <div class="footer-socials mt-3">
+          <a href="#">X</a><a href="#">f</a><a href="#">in</a><a href="#">ig</a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-col">
+          <h4>Quick Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="uhv-cell.html">UHV Cell</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="impact-stories.html">UI Impact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-col">
+          <h4>Useful Links</h4>
+          <ul class="footer-links">
+            <li><a href="#">Mandatory Disclosure</a></li>
+            <li><a href="#">Grievance Redressal</a></li>
+            <li><a href="#">Anti Ragging & Squad</a></li>
+            <li><a href="#">Women Grievance</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-col">
+          <h4>Location</h4>
+          <div class="footer-map">
+            <iframe src="https://www.google.com/maps?q=Nashik&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-visitors">
+      <span class="dot-live"></span>
+      <span>VISITORS <strong id="footerVisitorCount">1613</strong></span>
+    </div>
+
+    <div class="footer-bottom">
+      <p>2026 © Copyright LGMIER. All Rights Reserved</p>
+    </div>
+  </div>
+
+  <a href="#" class="scroll-top" id="scrollTop">↑</a>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ============ Internal JS ============ -->
+<script>
+  // -----------------------------------------------------------
+  // Dummy Impact Stories Data
+  // -----------------------------------------------------------
+  let impactStories = [
+    {
+      type: "video",
+      video: "images/story-video1.mp4",
+      text: "",
+      name: "Rohan Kale",
+      dept: "Electronics - Final Year",
+      date: "SHARED ON MAR 15, 2026",
+      avatar: "https://www.kvnnaik.org/uploads/Recruiters5.jpeg",
+      approved: true
+    },
+    {
+      type: "text",
+      text: "The UHV course has been an enlightening journey for me, providing a solid foundation for ethical living and professional integrity. I learned how to handle complex situations with a calm state of mind and a clear perspective.",
+      name: "Sakshi Londhe",
+      dept: "Mechanical - Third Year",
+      date: "SHARED ON MAR 11, 2026",
+      avatar: "https://tse1.explicit.bing.net/th/id/OIP.IqA0TQC7f6uaLHF1kPvZugAAAA?r=0&w=300&h=300&rs=1&pid=ImgDetMain&o=7&rm=3",
+      approved: true
+    },
+    {
+      type: "text",
+      text: "Choosing UHV was a life-changing decision. During an internship interview for a 6 LPA PPO, the recruiters emphasized that values matter more than technical skill. By applying UHV principles—honesty, humility, and transparency—I stood out among candidates and secured the selection.",
+      name: "Chavan Pavan Devkrushna",
+      dept: "Mechanical - Final Year",
+      date: "SHARED ON MAR 13, 2026",
+      avatar: "images/placeholder-avatar.png",
+      approved: true
+    },
+    {
+      type: "text",
+      text: "UHV helped me explore human nature and the workings of the world. Coming from a technical branch, my social growth was limited, but this subject acted as a bridge to my inner self. I learned to analyze factors affecting my own happiness.",
+      name: "Siddhant Shreyans Mishrtikotkar",
+      dept: "Computer Engineering",
+      date: "SHARED ON MAR 11, 2026",
+      avatar: "images/placeholder-avatar.png",
+      approved: true
+    },
+    {
+      type: "text",
+      text: "This story is still pending admin review and will not appear on the live site until approved.",
+      name: "Pending Student",
+      dept: "Second Year",
+      date: "SHARED ON MAR 20, 2026",
+      avatar: "images/placeholder-avatar.png",
+      approved: false
+    }
+  ];
+
+  function renderStories() {
+    function renderStories() {
+
+  const grid = document.getElementById('storiesGrid');
+  const approvedStories = impactStories.filter(s => s.approved === true);
+
+  document.getElementById('storyCount').textContent = approvedStories.length;
+
+
+  if (approvedStories.length === 0) {
+    grid.innerHTML = `
+      <div class="no-stories">
+        No approved stories yet. Check back soon!
+      </div>`;
+    return;
+  }
+
+
+  grid.innerHTML = approvedStories.map(story => `
+
+    <div class="col-md-6 col-lg-4">
+
+      <div class="story-card">
+
+        <div class="story-card-content">
+
+        ${story.type === 'video' ? `
+
+          <div class="story-video-wrapper">
+            <video src="${story.video}" controls></video>
+          </div>
+
+        ` : `
+
+          <p class="story-text">
+            ${story.text}
+          </p>
+
+        `}
+
+        </div>
+
+
+        <!-- Profile Section -->
+
+        <div class="story-author">
+
+          <img 
+          src="${story.avatar}" 
+          alt="${story.name}" 
+          class="story-avatar">
+
+
+          <div>
+
+            <p class="story-author-name">
+              ${story.name}
+            </p>
+
+
+            <p class="story-author-date">
+              ${story.dept}
+              <br>
+              ${story.date}
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+  `).join('');
+
+}
+
+renderStories();
+  }
+  renderStories();
+
+  // ----- Share Story Modal -----
+  const shareModal = document.getElementById('shareModal');
+  const openShareModal = document.getElementById('openShareModal');
+  const closeModal = document.getElementById('closeModal');
+  const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+  const storyForm = document.getElementById('storyForm');
+  const formContent = document.getElementById('formContent');
+  const successMessage = document.getElementById('successMessage');
+
+  function openModal() {
+    shareModal.classList.add('show');
+    formContent.style.display = 'block';
+    successMessage.classList.remove('show');
+    storyForm.reset();
+  }
+  function closeModalFn() {
+    shareModal.classList.remove('show');
+  }
+
+  openShareModal.addEventListener('click', openModal);
+  closeModal.addEventListener('click', closeModalFn);
+  shareModal.addEventListener('click', (e) => { if (e.target === shareModal) closeModalFn(); });
+
+  // ----- Media Type Toggle -----
+  const toggleButtons = document.querySelectorAll('.media-type-toggle button');
+  const textArea = document.getElementById('textArea');
+  const videoArea = document.getElementById('videoArea');
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (btn.dataset.type === 'video') {
+        videoArea.classList.add('active');
+        textArea.classList.remove('active');
+      } else {
+        textArea.classList.add('active');
+        videoArea.classList.remove('active');
+      }
+    });
+  });
+
+  storyForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('displayName').value.trim() || 'Anonymous';
+    const activeType = document.querySelector('.media-type-toggle button.active').dataset.type;
+    const text = document.getElementById('storyText').value.trim();
+    const videoFile = document.getElementById('videoFile').files[0];
+    const profilePhoto = document.getElementById('profilePhoto').files[0];
+
+    impactStories.push({
+      type: activeType,
+      text: activeType === 'text' ? text : "",
+      video: activeType === 'video' && videoFile ? URL.createObjectURL(videoFile) : "",
+      name: name,
+      dept: "Pending Review",
+      date: "SHARED ON " + new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).toUpperCase(),
+      avatar: profilePhoto ? URL.createObjectURL(profilePhoto) : "images/placeholder-avatar.png",
+      approved: false
+    });
+
+    formContent.style.display = 'none';
+    successMessage.classList.add('show');
+  });
+
+  closeSuccessBtn.addEventListener('click', closeModalFn);
+
+  // ----- Visitor Counter -----
+  function startVisitorCounter() {
+    let baseCount = parseInt(localStorage.getItem('visitorCount')) || 1613;
+    function updateDisplay() {
+      const footerEl = document.getElementById('footerVisitorCount');
+      if (footerEl) footerEl.textContent = baseCount;
+    }
+    updateDisplay();
+    localStorage.setItem('visitorCount', baseCount);
+    setInterval(() => {
+      baseCount += Math.floor(Math.random() * 2);
+      localStorage.setItem('visitorCount', baseCount);
+      updateDisplay();
+    }, 5000);
+  }
+  startVisitorCounter();
+
+  // ----- Scroll to Top -----
+  document.getElementById('scrollTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>

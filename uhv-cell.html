@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Institute UHV Cell | LGMIER</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- ===== Internal CSS (Page Specific Styles) ===== -->
+<style>
+  * {
+    font-family: "Times New Roman", Times, serif;
+}
+
+  /* ===== Header ===== */
+  .college-header {
+    display: grid;
+    grid-template-columns: 130px 1fr 130px;
+    align-items: center;
+    padding: 6px 20px;
+    background: #fff;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .header-logo img {
+    height: 50px;
+    width: auto;
+  }
+
+  .trust-line {
+    color: #001F5B;        /* Navy Blue */
+    font-weight: 700;
+    font-size: 14px;
+    margin: 2px 0 4px;
+    letter-spacing: 0.3px;
+}
+
+  .college-title {
+    color:#B71C1C;
+    font-weight:800;
+    font-size:18px;
+    line-height:1.2;
+    margin:2px 0;
+  }
+
+  .approval-line {
+    color: #333;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.2;
+    margin: 1px 0;
+  }
+
+  /* ===== Navbar ===== */
+  .navbar-custom{
+    background:#e9e1e1;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    border:1px solid #eee;
+    border-radius:50px;
+
+    padding:2px 18px;
+    margin:4px 20px;
+    min-height:42px;
+}
+.navbar{
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+}
+
+.navbar-expand-lg{
+    min-height:42px;
+}
+
+.navbar-collapse{
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.navbar-nav{
+    margin:0;
+    padding:0;
+    gap:4px;
+    align-items:center;
+}
+
+.nav-item{
+    margin:0;
+}
+
+.navbar-custom .nav-link{
+    color:#333 !important;
+    font-weight:600;
+    font-size:14px;
+    padding:6px 18px !important;
+    line-height:1.2;
+    border-radius:30px;
+    transition:all .3s ease;
+}
+
+.navbar-custom .nav-link.active{
+    padding:6px 18px !important;
+}
+  .navbar-nav{
+    align-items:center;
+    gap:8px;
+  }
+
+  .nav-icon{
+    background:#B71C1C;
+    color:#fff;
+    font-weight:bold;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+  }
+
+  .nav-title{
+    font-weight:700;
+    font-size:18px;
+    color:#B71C1C;
+    margin:0;
+  }
+
+  .navbar-custom .nav-link{
+    color:#333 !important;
+    font-weight:600;
+    font-size:14px;
+    padding:8px 18px !important;
+    border-radius:30px;
+    transition:all .3s ease;
+  }
+
+  .navbar-custom .nav-link:hover{
+    background:#fff5f5;
+    color:#B71C1C !important;
+  }
+
+  .navbar-custom .nav-link.active{
+    background:#B71C1C;
+    color:#fff !important;
+    border-radius:30px;
+  }
+
+  .visitors-box{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-end;
+    text-align:right;
+    font-size:11px;
+    color:#a1c912;
+  }
+
+  .visitors-box p{
+    font-weight:700;
+    color:#B71C1C;
+    margin:0;
+    font-size:14px;
+  }
+
+  .dot-live{
+    width:8px;
+    height:8px;
+    background:#dc3545;
+    border-radius:50%;
+    display:inline-block;
+    animation:pulse 1.5s infinite;
+  }
+
+  @keyframes pulse{
+    0%{opacity:1;}
+    50%{opacity:.4;}
+    100%{opacity:1;}
+  }
+
+  /* ===== Updates Ticker ===== */
+  .updates-bar {
+    display: flex;
+    align-items: center;
+    background: #B71C1C;
+    color: #fff;
+    padding: 4px 15px;
+    overflow: hidden;
+    gap: 10px;
+    min-height: 38px;
+  }
+  .updates-tag { background: #dc3545; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+  .ticker-track { display: flex; gap: 60px; white-space: nowrap; animation: ticker 20s linear infinite; }
+  .ticker-track span { font-size: 14px; }
+  @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+  /* ===== Page Hero (small banner) ===== */
+  .page-hero {
+    position: relative; overflow: hidden;
+    text-align: center; padding: 80px 30px 50px;
+    background: linear-gradient(120deg, #001F5B 0%, #6e1414 55%, #B71C1C 100%);
+  }
+  .page-hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 88% 18%, rgba(212,175,55,0.18) 0%, transparent 42%),
+      radial-gradient(circle at 8% 90%, rgba(255,255,255,0.08) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .page-hero .tag-pill-green { background: rgba(255,255,255,0.15); color: #ffe9b0; border: 1px solid rgba(255,233,176,0.35); padding: 6px 16px; border-radius: 15px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; position: relative; z-index: 1; }
+ .page-hero h1{
+    font-family:'Times New Roman', serif;
+    font-size:32px;
+    color:#fff;
+    font-weight:700;
+    margin-bottom:10px;
+    white-space:nowrap;
+    position: relative; z-index: 1;
+}
+
+.page-hero p{
+    font-family:'Times New Roman', serif;
+    font-size:18px;
+    color:rgba(255,255,255,0.85);
+    max-width:100%;
+    margin:0 auto;
+    white-space:nowrap;
+    position: relative; z-index: 1;
+}
+@media(max-width:768px){
+    .page-hero h1,
+    .page-hero p{
+        white-space:normal;
+    }
+
+    .page-hero h1{
+        font-size:24px;
+    }
+
+    .page-hero p{
+        font-size:15px;
+    }
+}
+  .highlight-text { background: linear-gradient(to right, #B71C1C, #dc3545); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* ===== Objectives Section ===== */
+  .objectives-section { padding: 60px 30px; max-width: 1300px; margin: 0 auto; }
+  .objectives-left h2 { font-family: Georgia, serif; font-size: 28px; margin-bottom: 30px; color: #1a1a1a; line-height: 1.4; }
+  .objective-item {
+    display: flex; align-items: flex-start; gap: 15px;
+    background: #fff; border: 1px solid #eee; border-radius: 12px;
+    padding: 18px 20px; margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .objective-item:hover { transform: translateX(6px); box-shadow: 0 8px 20px rgba(183,28,28,0.1); border-color: #B71C1C; }
+  .obj-number {
+    background: rgba(183,28,28,0.12); color: #B71C1C; font-weight: 700;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  }
+  .objective-item:hover .obj-number { background: #B71C1C; color: #fff; transform: scale(1.1); }
+  .objective-item p { font-size: 14px; color: #444; line-height: 1.5; margin: 0; }
+
+  .obj-image-placeholder {
+    width: 100%; height: 320px; border-radius: 16px;
+    background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e6e6e6 10px, #e6e6e6 20px);
+    display: flex; align-items: center; justify-content: center;
+    color: #999; font-size: 14px; margin-bottom: 20px;
+  }
+  .obj-image-placeholder {
+    overflow: hidden;
+}
+.obj-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+}
+  .vision-box { background: #B71C1C; color: #fff; border-radius: 14px; padding: 25px; }
+  .vision-box h3 { font-family: Georgia, serif; margin-bottom: 12px; }
+  .vision-box p { font-size: 14px; line-height: 1.6; font-weight: 500; margin: 0; }
+
+  /* ===== Cell Members Table ===== */
+  .members-section { padding: 60px 30px 80px; max-width: 1200px; margin: 0 auto; text-align: center; }
+  .members-table-wrapper { overflow-x: auto; margin-top: 40px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+  /* ===== Cell Members Table Updated ===== */
+
+.members-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    min-width:750px;
+    table-layout:fixed;
+}
+
+
+.members-table thead{
+    background:#f9fbfa;
+}
+
+
+.members-table th{
+    padding:16px 20px;
+    font-size:12px;
+    letter-spacing:0.5px;
+    color:#888;
+    text-transform:uppercase;
+    text-align:left;
+}
+
+
+/* SR NO COLUMN */
+.members-table th:first-child,
+.members-table td:first-child{
+    width:70px;
+    text-align:center;
+}
+
+
+/* NAME COLUMN */
+.members-table th:nth-child(2),
+.members-table td:nth-child(2){
+    width:280px;
+}
+
+
+/* ROLE COLUMN */
+.members-table th:nth-child(3),
+.members-table td:nth-child(3){
+    width:170px;
+}
+
+
+/* DESIGNATION COLUMN */
+.members-table th:nth-child(4),
+.members-table td:nth-child(4){
+    width:auto;
+}
+
+
+.members-table td{
+    padding:16px 20px;
+    border-top:1px solid #eee;
+    font-size:14px;
+    color:#333;
+    text-align:left;
+}
+
+
+/* IMAGE + NAME */
+.member-name-cell{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-weight:600;
+}
+
+
+.member-avatar{
+    width:60px;
+    height:60px;
+    border-radius:12px;
+    object-fit:cover;
+    background:#eee;
+}
+
+
+.role-badge{
+    background:#fff5f5;
+    color:#B71C1C;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+    white-space:nowrap;
+}
+
+  /* ===== Footer ===== */
+  .site-footer { background: #14171c; color: #cfcfcf; padding: 50px 30px 20px; position: relative; }
+  .footer-college-name { font-size: 15px; color: #fff; margin-bottom: 12px; line-height: 1.4; }
+  .footer-address, .footer-contact { font-size: 13px; margin-bottom: 8px; color: #b0b0b0; }
+  .footer-socials a { width: 32px; height: 32px; border: 1px solid #444; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; color: #ccc; text-decoration: none; font-size: 12px; margin-right: 8px; }
+  .footer-socials a:hover { background: #B71C1C; border-color: #B71C1C; color: #fff; }
+  .footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+  .footer-links { list-style: none; padding: 0; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a { color: #b0b0b0; text-decoration: none; font-size: 13px; }
+  .footer-links a:hover { color: #dc3545; }
+  .footer-map { border-radius: 10px; overflow: hidden; }
+  .footer-visitors { display: flex; align-items: center; justify-content: center; gap: 8px; width: fit-content; margin: 30px auto 0; padding: 8px 20px; border: 1px solid #2a2a2a; border-radius: 20px; background: rgba(220,53,69,0.08); color: #cfcfcf; font-size: 13px; font-weight: 600; }
+  .footer-visitors strong { color: #dc3545; font-size: 14px; }
+  .footer-bottom { text-align: center; border-top: 1px solid #2a2a2a; margin-top: 35px; padding-top: 18px; font-size: 12px; color: #888; }
+  .scroll-top { position: fixed; bottom: 20px; right: 20px; background: #dc3545; color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px; z-index: 10; }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .college-header { grid-template-columns: 1fr; text-align: center; }
+    .header-logo { margin: 0 auto; }
+    .college-title { font-size: 16px; }
+    .trust-line, .approval-line { font-size: 11px; }
+    .page-hero h1 { font-size: 26px; }
+    .objectives-left h2 { font-size: 22px; }
+    .members-table { min-width: 550px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="college-header">
+  <div class="header-logo"><img src="https://tse2.mm.bing.net/th/id/OIP.Am33BQymmngS4icXMHDjKgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="College Logo"></div>
+  <div>
+    <p class="trust-line">Kr. Vasantrao Narayanrao Naik Shikshan Prasarak Sanstha's</p>
+    <h1 class="college-title">LOKNETE GOPINATHJI MUNDE INSTITUTE OF ENGINEERING EDUCATION & RESEARCH</h1>
+    <p class="approval-line">Approved By AICTE &nbsp;|&nbsp; Accredited 'B' Grade By NAAC</p>
+  </div>
+ <div class="header-logo"><img src="https://www.kvnnaik.org/images/kvn_img/logo.png" alt="KVN Naik Sanstha Logo"></div>
+</header>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto ">
+        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link active" href="uhv-cell.html">INSTITUTE UHV CELL</a></li>
+        <li class="nav-item"><a class="nav-link" href="activities.html">ACTIVITIES</a></li>
+        <li class="nav-item"><a class="nav-link" href="impact-stories.html">IMPACT STORIES</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ UPDATES TICKER ============ -->
+<div class="updates-bar">
+  <span class="updates-tag">● UPDATES</span>
+  <div class="ticker-track">
+    <span>Dignitaries: Dr. Pramod Patil, Dr. Rajeev Nargundkar, & Dr. Govind Kulkarni graced the inauguration.</span>
+    <span>📌 AICTE UHV Cell: Dr. Umesh Jadhav (Resource Person), Dr. Anita Mane (Co-Facilitator), Ms. Kiran Naphade (Observer).</span>
+    <span>💡 MDP focuses on Right Understanding, Right Feelings, and Right Conduct for ethical leadership.</span>
+  </div>
+</div>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+
+    <h1>
+        Institute Universal Human Values Cell
+    </h1>
+
+    <p>
+        Implementing Universal Human Values through structured programs and collaborative mentorship.
+    </p>
+
+</section>
+
+<!-- ============ OBJECTIVES SECTION ============ -->
+<section class="objectives-section">
+  <div class="row g-5 align-items-start">
+    <div class="col-lg-6 objectives-left">
+      <h2>Objectives of the <span class="highlight-text">Institute Universal Human Values Cell</span></h2>
+
+      <div class="objective-item">
+        <span class="obj-number">1</span>
+        <p>Develop and implement programs such as SIP, UHV-I, UHV-II, and Minor Degree in UHV as per institute policy.</p>
+      </div>
+      <div class="objective-item">
+        <span class="obj-number">2</span>
+        <p>Coordinate co-curricular programs like Faculty Mentor Program and Student Buddy Program.</p>
+      </div>
+      <div class="objective-item">
+        <span class="obj-number">3</span>
+        <p>Guide extracurricular activities aligned with human values.</p>
+      </div>
+      <div class="objective-item">
+        <span class="obj-number">4</span>
+        <p>Conduct training and orientation of faculty and staff in UHV and HVBE.</p>
+      </div>
+      <div class="objective-item">
+        <span class="obj-number">5</span>
+        <p>Organize value-based outreach programs for the community.</p>
+      </div>
+      <div class="objective-item">
+        <span class="obj-number">6</span>
+        <p>Regularly track, evaluate, and share progress with stakeholders.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+     <div class="obj-image-placeholder">
+  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&q=80" alt="UHV Cell Activity" class="obj-image">
+</div>
+
+      <div class="vision-box">
+        <h3>Our Vision</h3>
+        <p>"To create a values-based educational ecosystem that fosters holistic development of students and staff."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CELL MEMBERS SECTION ============ -->
+<section class="members-section">
+  <h2 class="page-hero-title" style="font-family: Georgia, serif; font-size: 34px; color:#1a1a1a;">Cell <span class="highlight-text">Members</span></h2>
+  <p style="color:#666;">Dedicated faculty and staff committed to building a values-driven campus.</p>
+
+  <div class="members-table-wrapper">
+    <table class="members-table">
+      <thead>
+        <tr>
+          <th>SR. NO.</th>
+          <th>NAME</th>
+          <th>ROLE</th>
+          <th>DESIGNATION / DEPT</th>
+        </tr>
+      </thead>
+      <tbody id="membersTableBody">
+        <!-- Rows injected by JS using dummy data -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h3 class="footer-college-name">LOKNETE GOPINATHJI MUNDE INSTITUTE<br>OF ENGINEERING EDUCATION & RESEARCH</h3>
+        <p class="footer-address">Dongare Vasatigruha Parisar, Canada Corner, Sharanpur Road, Nashik-422002.</p>
+        <p class="footer-contact">Phone: (0253) 6641300/02/05/09</p>
+        <p class="footer-contact">Email: logmieer@edu.in</p>
+        <div class="footer-socials mt-3">
+          <a href="#">X</a><a href="#">f</a><a href="#">in</a><a href="#">ig</a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-col">
+          <h4>Quick Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="uhv-cell.html">UHV Cell</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="impact-stories.html">UI Impact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-col">
+          <h4>Useful Links</h4>
+          <ul class="footer-links">
+            <li><a href="#">Mandatory Disclosure</a></li>
+            <li><a href="#">Grievance Redressal</a></li>
+            <li><a href="#">Anti Ragging & Squad</a></li>
+            <li><a href="#">Women Grievance</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-col">
+          <h4>Location</h4>
+          <div class="footer-map">
+            <iframe src="https://www.google.com/maps?q=Nashik&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-visitors">
+      <span class="dot-live"></span>
+      <span>VISITORS <strong id="footerVisitorCount">1613</strong></span>
+    </div>
+
+    <div class="footer-bottom">
+      <p>2026 © Copyright LGMIER. All Rights Reserved</p>
+    </div>
+  </div>
+
+  <a href="#" class="scroll-top" id="scrollTop">↑</a>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ============ Internal JS ============ -->
+<script>
+  // ----- Dummy Cell Members Data -----
+  const cellMembers = [
+    { name: "Dr. Kishor Pakhale", role: "Chairperson", dept: "Director, College Name", img: "https://cdnbbsr.s3waas.gov.in/s32d2ca7eedf739ef4c3800713ec482e1a/uploads/2025/12/2025120532.jpeg" },
+    { name: "Dongare Vasatigruh Parisarkanf kfjdjfdfjdjf Dongare Vasatigruh Parisar", role: "Convener", dept: "Dean – Academics", img: "https://www.iitk.ac.in/doms/icfmcf/assets/img/team/Sundararaman-Ramamurthy.jpg" },
+    { name: "Full Name", role: "Coordinator", dept: "Institute UHV Coordinator", img: "images/placeholder-avatar.png" },
+    { name: "Dr Full Name", role: "Faculty Representative", dept: "Professor - Department Name", img: "images/placeholder-avatar.png" },
+    { name: "Dr Full Name", role: "Faculty Representative", dept: "Asst. Professor - Department", img: "images/placeholder-avatar.png" },
+    { name: "Full Name", role: "Faculty Representative", dept: "Asst. Professor - Department", img: "images/placeholder-avatar.png" },
+    { name: "Full Name", role: "Staff Representative", dept: "Registrar - Office", img: "images/placeholder-avatar.png" },
+    { name: "Full Name", role: "Staff Representative", dept: "Campus Incharge", img: "images/placeholder-avatar.png" }
+  ];
+
+  function renderMembersTable() {
+    const tbody = document.getElementById('membersTableBody');
+    if (!tbody) return;
+    tbody.innerHTML = cellMembers.map((m, i) => `
+      <tr>
+        <td>${i + 1}</td>
+        <td class="member-name-cell">
+          <img src="${m.img}" alt="${m.name}" class="member-avatar">
+          <span>${m.name}</span>
+        </td>
+        <td><span class="role-badge">${m.role}</span></td>
+        <td>${m.dept}</td>
+      </tr>
+    `).join('');
+  }
+  renderMembersTable();
+
+  // ----- Visitor Counter -----
+  function startVisitorCounter() {
+    let baseCount = parseInt(localStorage.getItem('visitorCount')) || 1613;
+    function updateDisplay() {
+      const footerEl = document.getElementById('footerVisitorCount');
+      if (footerEl) footerEl.textContent = baseCount;
+    }
+    updateDisplay();
+    localStorage.setItem('visitorCount', baseCount);
+    setInterval(() => {
+      baseCount += Math.floor(Math.random() * 2);
+      localStorage.setItem('visitorCount', baseCount);
+      updateDisplay();
+    }, 5000);
+  }
+  startVisitorCounter();
+
+  // ----- Scroll to Top -----
+  document.getElementById('scrollTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
